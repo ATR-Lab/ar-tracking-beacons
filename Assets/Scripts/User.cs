@@ -5,26 +5,16 @@ using UnityEngine.UI;
 
 public class User : MonoBehaviour
 {
-    //[SerializeField]
-    //private CharacterController _controller;
-
     [SerializeField]
     private Image _targetUI;
 
-    // Start is called before the first frame update
     void Start()
     {
-        /*if (_controller == null)
-        {
-            Debug.LogError("Character Controller is null");
-           
-        }*/
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
