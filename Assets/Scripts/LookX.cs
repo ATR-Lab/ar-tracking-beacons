@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LookX : MonoBehaviour
 {
-
-    // Update is called once per frame
     void Update()
     {
         float _mouseX = Input.GetAxis("Mouse X");

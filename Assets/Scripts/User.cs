@@ -10,19 +10,24 @@ public class User : MonoBehaviour
 
     void Start()
     {
-
+        //Hides cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
+
+        //Unhides cursor
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
 
+
+        //Disable UI code
+        // !Currently broken!
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (_targetUI.enabled == true)

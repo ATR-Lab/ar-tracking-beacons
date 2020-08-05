@@ -566,7 +566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trackedObject: {fileID: 241080346}
   _targetUI: {fileID: 393557482}
-  _needle: {fileID: 0}
+  _needle: {fileID: 538668343}
   _camera: {fileID: 1270658582}
 --- !u!1 &1134283319
 GameObject:
