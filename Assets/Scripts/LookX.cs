@@ -10,7 +10,7 @@ public class LookX : MonoBehaviour
         float _mouseY = Input.GetAxis("Mouse Y");
         Vector3 newRotation = transform.localEulerAngles;
         newRotation.y += _mouseX;
-        newRotation.x += _mouseY;
+        newRotation.x += -_mouseY;
         transform.localEulerAngles = newRotation;
     }
 }
