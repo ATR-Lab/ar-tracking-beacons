@@ -25,9 +25,6 @@ public class User : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
-
-        //Disable UI code
-        // !Currently broken!
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (_targetUI.activeInHierarchy == true)
