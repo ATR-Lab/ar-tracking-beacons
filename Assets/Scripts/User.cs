@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class User : MonoBehaviour
 {
     [SerializeField]
-    private Image _targetUI;
+    private GameObject _targetUI;
 
     void Start()
     {
@@ -30,13 +30,13 @@ public class User : MonoBehaviour
         // !Currently broken!
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (_targetUI.enabled == true)
+            if (_targetUI.activeInHierarchy == true)
             {
-                _targetUI.enabled = false;
+                _targetUI.SetActive(false);
             }
             else
             {
-                _targetUI.enabled = true;
+                _targetUI.SetActive(true);
             }
         }
     }
