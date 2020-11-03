@@ -25,6 +25,7 @@ public class User : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
+        //Toggles UI visibility
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (_targetUI.activeInHierarchy == true)

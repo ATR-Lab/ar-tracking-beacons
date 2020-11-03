@@ -18,6 +18,7 @@ public class UITracking : MonoBehaviour
     {
 
         _camera = transform.Find("Main Camera").GetComponent<Camera>();
+
         
     }
 
