@@ -57,7 +57,8 @@ public class UITracking : MonoBehaviour
     {
 
         Vector3 newDirection = Vector3.RotateTowards(_user.transform.position, _target.transform.position/* - transform.position*/, 4, 4);
-        Debug.DrawRay(_user.transform.position, newDirection * 10, Color.red);
+        float distance = Vector3.Distance(_user.transform.position, _target.transform.position);
+        Debug.DrawRay(_user.transform.position, newDirection * (distance/4), Color.red);
         Quaternion newAngle = Quaternion.Euler(newDirection.x, newDirection.y, newDirection.z);
         _needle.transform.rotation = newAngle;
     }
