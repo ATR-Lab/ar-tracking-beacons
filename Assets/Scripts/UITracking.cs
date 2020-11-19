@@ -48,13 +48,18 @@ public class UITracking : MonoBehaviour
         Vector3 screenPos = _camera.WorldToScreenPoint(_trackedObject.transform.position);
         _targetUI.transform.position = screenPos;
 
-        //Compass 
-        Vector3 newDirection = Vector3.RotateTowards(_needle.transform.position, _trackedObject.transform.position/* - transform.position*/, 4, 4);
+        Compass(_trackedObject);
+        
+
+    }
+
+    void Compass(GameObject _target)
+    {
+
+        Vector3 newDirection = Vector3.RotateTowards(_needle.transform.position, _target.transform.position/* - transform.position*/, 4, 4);
         Debug.DrawRay(_needle.transform.position, newDirection, Color.red);
         Quaternion newAngle = Quaternion.Euler(newDirection.x, newDirection.y, newDirection.z);
         _needle.transform.rotation = newAngle;
-        
-
     }
 
 
