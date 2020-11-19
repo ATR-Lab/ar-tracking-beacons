@@ -5,7 +5,7 @@ using UnityEngine;
 public class UITracking : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _targetUI, _needle, _target1, _target2;
+    private GameObject _targetUI, _needle, _user, _target1, _target2;
     [SerializeField]
     private Camera _camera;
 
@@ -56,8 +56,8 @@ public class UITracking : MonoBehaviour
     void Compass(GameObject _target)
     {
 
-        Vector3 newDirection = Vector3.RotateTowards(_needle.transform.position, _target.transform.position/* - transform.position*/, 4, 4);
-        Debug.DrawRay(_needle.transform.position, newDirection, Color.red);
+        Vector3 newDirection = Vector3.RotateTowards(_user.transform.position, _target.transform.position/* - transform.position*/, 4, 4);
+        Debug.DrawRay(_user.transform.position, newDirection * 10, Color.red);
         Quaternion newAngle = Quaternion.Euler(newDirection.x, newDirection.y, newDirection.z);
         _needle.transform.rotation = newAngle;
     }
