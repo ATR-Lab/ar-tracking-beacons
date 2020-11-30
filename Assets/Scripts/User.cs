@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class User : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _targetUI;
+    private GameObject _targetUI, _compass;
 
     void Start()
     {
@@ -31,10 +31,12 @@ public class User : MonoBehaviour
             if (_targetUI.activeInHierarchy == true)
             {
                 _targetUI.SetActive(false);
+                _compass.SetActive(false);
             }
             else
             {
                 _targetUI.SetActive(true);
+                _compass.SetActive(true);
             }
         }
     }
