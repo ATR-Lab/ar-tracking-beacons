@@ -22,9 +22,9 @@ public class UITracking : MonoBehaviour
     private void Start()
     {
 
-        _camera = transform.Find("Main Camera").GetComponent<Camera>();
+        //_camera = transform.Find("Main Camera").GetComponent<Camera>();
         _trackedObject = _target1;
-
+        Debug.Log("_trackedObject = " + _trackedObject);
 
 
     }
@@ -48,7 +48,11 @@ public class UITracking : MonoBehaviour
         Vector3 screenPos = _camera.WorldToScreenPoint(_trackedObject.transform.position);
         _targetUI.transform.position = screenPos;
 
-        Compass(_trackedObject);
+        if  (_trackedObject != null)
+        {
+            Compass(_trackedObject);
+        }
+      
         
 
     }
