@@ -7,6 +7,8 @@ public class UITracking : MonoBehaviour
     [SerializeField]
     private GameObject _targetUI, _needle, _sphere, _user, _target1, _target2;
     [SerializeField]
+    private float radians;
+    [SerializeField]
     private Camera _camera;
 
     private GameObject _trackedObject;
@@ -25,6 +27,7 @@ public class UITracking : MonoBehaviour
         //_camera = transform.Find("Main Camera").GetComponent<Camera>();
         _trackedObject = _target1;
         Debug.Log("_trackedObject = " + _trackedObject);
+        Compass(_trackedObject);
 
 
     }
@@ -45,9 +48,12 @@ public class UITracking : MonoBehaviour
             Debug.Log("_trackedObject = " + _trackedObject);
         }
 
-        Compass(_trackedObject);
-        TargetBox();   
-
+        if (_trackedObject != null)
+        {
+            Compass(_trackedObject);
+            TargetBox();
+        }
+      
     }
 
 
@@ -55,18 +61,14 @@ public class UITracking : MonoBehaviour
     {
         Vector3 screenPos = _camera.WorldToScreenPoint(_trackedObject.transform.position);
         _targetUI.transform.position = screenPos;
-
-        if (_trackedObject != null)
-        {
-            Compass(_trackedObject);
-        }
+    
     }
 
     public void Compass(GameObject _target)
     {
         
         //Compass code
-        Vector3 newDirection = Vector3.RotateTowards(_needle.transform.position, _target.transform.position - transform.position, 360, 360);
+        Vector3 newDirection = Vector3.RotateTowards(_needle.transform.position, _target.transform.position - transform.position, radians, radians);
         Quaternion newAngle = Quaternion.Euler(newDirection.x, newDirection.y, newDirection.z);
         _needle.transform.rotation = (newAngle);
 
